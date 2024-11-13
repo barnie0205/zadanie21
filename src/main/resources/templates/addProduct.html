@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj Produkt</title>
+</head>
+<body>
+<h1>Dodaj nowy produkt</h1>
+<form th:action="@{/add}" method="post" th:object="${product}">
+    <label for="name">Nazwa:</label>
+    <input type="text" id="name" th:field="*{name}" required><br><br>
+
+    <label for="price">Cena w PLN:</label>
+    <input type="number" id="price" th:field="*{price}" step="0.01" min="0.01" required><br><br>
+
+    <label for="category">Kategoria:</label>
+    <select id="category" name="category" th:fild="*{category}" required>
+        <option value="" th:disabled="disabled" th:selected="selected">Wybierz z listy...</option>
+        <option value="FOOD">Art. spożywcze</option>
+        <option value="HOUSEHOLD">Art. gosp. domowego</option>
+        <option value="OTHER">Inne</option>
+    </select><br><br>
+
+    <button type="submit">Dodaj</button>
+</form>
+<a th:href="@{/}">Powrót do strony głównej</a>
+</body>
+</html>

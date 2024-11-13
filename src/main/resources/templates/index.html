@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Strona Główna</title>
+</head>
+<body>
+<h1>Witamy na stronie głównej</h1>
+<ul>
+    <li><a th:href="@{/lista}">Wyświetl wszystkie produkty</a></li>
+    <li><a th:href="@{/lista?kategoria=FOOD}">Wyświetl produkty spożywcze</a></li>
+    <li><a th:href="@{/lista?kategoria=HOUSEHOLD}">Wyświetl produkty gospodarcze</a></li>
+    <li><a th:href="@{/lista?kategoria=OTHER}">Wyświetl inne produkty</a></li><br>
+    <li><a th:href="@{/add}">Dodaj produkt</a></li>
+</ul>
+</body>
+</html>
